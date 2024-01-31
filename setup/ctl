@@ -1,0 +1,18 @@
+#!/bin/bash
+set -Ceuo pipefail
+
+
+# Main command. Default command is `all`
+cmd=${1:-all}
+
+case $cmd in
+ "all")
+   ansible-playbook -i inventory/local playbooks/main.yml \
+     --ask-become-pass \
+     --extra-vars "force_update=false"
+   ;;
+
+ *)
+   echo "Not found command, ${1}"
+   ;;
+esac

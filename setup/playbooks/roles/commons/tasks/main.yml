@@ -1,0 +1,16 @@
+- name: get the username running the deploy
+  become: false
+  local_action: command whoami
+  register: whoami
+
+- name: Set a fact with the user name.
+  set_fact:
+    USER: "{{ whoami.stdout }}"
+
+- name: uname
+  shell:
+    cmd: uname -a
+  register: uname_a
+
+- name: install dev packages
+  include_tasks: dev_packages.yml

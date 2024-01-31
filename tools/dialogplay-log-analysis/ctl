@@ -1,0 +1,20 @@
+#!/bin/bash
+set -Ceuo pipefail
+
+
+# Main command. Default command is `all`
+cmd=${1:-all}
+
+case $cmd in
+ "install")
+   poetry install --no-root
+   ;;
+
+ "run")
+   poetry run jupyter lab
+   ;;
+
+ *)
+   echo "Not found command, ${1}"
+   ;;
+esac

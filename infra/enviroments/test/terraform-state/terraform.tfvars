@@ -1,0 +1,2 @@
+app = "aichatfuu"
+env = "test"

@@ -1,0 +1,8 @@
+- name: install dev packages
+  become: true
+  apt:
+    name:
+     - jq
+     - ripgrep
+    state: present
+    update_cache: yes

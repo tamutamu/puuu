@@ -1,0 +1,9 @@
+- name: all playbooks
+  hosts: local
+  gather_facts: true
+  roles:
+    - { role: commons }
+    - { role: git }
+    - { role: pyenv }
+    - { role: awscli }
+    - { role: asdf }

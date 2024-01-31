@@ -1,0 +1,20 @@
+- name: get git installed version
+  command: git --version
+  changed_when: false
+  failed_when: false
+  check_mode: false
+  ignore_errors: true
+  register: git_installed_version
+
+- name: install git
+  include_tasks: install_git.yml
+  when: git_installed_version.rc != 0
+
+- name: create config link
+  file:
+    src: "{{ [role_path, 'files', '.gitconfig'] | join('/') }}"
+    dest: "{{ [ansible_env.HOME, '.gitconfig'] | join('/') }}"
+    state: link
+
+- name: install lazygit
+  include_tasks: "lazygit.yml"

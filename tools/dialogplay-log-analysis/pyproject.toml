@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "dialogplay-log-analysis"
+version = "1.0.0"
+description = ""
+authors = [""]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+jupyterlab = "^4.0.10"
+openai = "^1.6.1"
+black = "^23.12.1"
+isort = "^5.13.2"
+jupyterlab-code-formatter = "^2.2.1"
+scikit-learn = "^1.3.2"
+matplotlib = "^3.8.2"
+pandas = "^2.1.4"
+openpyxl = "^3.1.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

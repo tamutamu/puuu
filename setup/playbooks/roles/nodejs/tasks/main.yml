@@ -1,21 +1,25 @@
-- name: install nodejs
-  zshell:
+- name: install asdf plugin
+  shell:
     cmd: |
       asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
-      asdf install nodejs {{ node_version }}
-      asdf global nodejs {{ node_version }}
+
+- name: install nodejs
+  shell:
+    cmd: |
+      asdf install nodejs {{ version }}
 
 - name: set npm global dir.
-  zshell:
+  shell:
     cmd: |
       mkdir -p ~/.npm-global/bin
       npm config set prefix ~/.npm-global
 
 - name: add ~/.npm-global/bin to $PATH
   blockinfile:
-    path: ~/.zsh.d/10-nodejs.sh
+    path: "~/.bash_profile"
     create: yes
     insertafter: EOF
     marker: "# {mark} nodejs"
     block: |
       export PATH=${PATH}:~/.npm-global/bin/
+

@@ -6,12 +6,10 @@
 
 - name: asdf init
   blockinfile:
-    path: "{{ item.path }}"
+    path: "~/.bash_profile"
     create: yes
     insertafter: EOF
     marker: "# {mark} asdf init."
     block: |
       . $HOME/.asdf/asdf.sh
       . $HOME/.asdf/completions/asdf.bash
-  with_items:
-    - { path: "~/.zsh.d/09-asdf.sh" }

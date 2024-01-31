@@ -3,7 +3,7 @@
   gather_facts: true
   roles:
     - { role: commons }
-    - { role: git }
-    - { role: pyenv }
-    - { role: awscli }
     - { role: asdf }
+    - { role: python }
+    - { role: nodejs }
+    - { role: awscli }

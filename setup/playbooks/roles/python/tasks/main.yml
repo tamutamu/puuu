@@ -1,0 +1,9 @@
+- name: install asdf plugin
+  shell:
+    cmd: |
+      asdf plugin add python https://github.com/danhper/asdf-python.git
+
+- name: install python
+  shell:
+    cmd: |
+      asdf install python {{ version }}

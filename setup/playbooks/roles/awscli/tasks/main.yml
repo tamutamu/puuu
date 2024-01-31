@@ -4,17 +4,3 @@
       - pip
       - awscli
     state: latest
-
-- name: pyenv rehash
-  zshell:
-    cmd: |
-      pyenv rehash
-
-- name: set my aws profile
-  blockinfile:
-    path: ~/.zsh.d/10-awscli.sh
-    create: yes
-    insertafter: EOF
-    marker: "# {mark} awscli role"
-    block: |
-      export AWS_PROFILE=myaws

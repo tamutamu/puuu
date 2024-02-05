@@ -14,3 +14,7 @@ module "terraform_backend" {
   env           = var.env
   force_destroy = false
 }
+
+module "iam_account" {
+  source        = "../../../modules/iam-account"
+}

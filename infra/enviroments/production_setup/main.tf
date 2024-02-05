@@ -8,9 +8,15 @@ provider "aws" {
   }
 }
 
+# Terraform State Management
 module "terraform_backend" {
-  source        = "../../../modules/terraform-state"
+  source        = "../../modules/terraform-state"
   app           = var.app
   env           = var.env
   force_destroy = false
+}
+
+# IAM DevOps Settings
+module "iam-devops" {
+  source        = "../../modules/iam-devops"
 }

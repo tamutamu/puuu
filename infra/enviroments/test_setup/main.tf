@@ -9,12 +9,8 @@ provider "aws" {
 }
 
 module "terraform_backend" {
-  source        = "../../../modules/terraform-state"
+  source        = "../../modules/terraform-state"
   app           = var.app
   env           = var.env
   force_destroy = false
-}
-
-module "iam_account" {
-  source        = "../../../modules/iam-account"
 }

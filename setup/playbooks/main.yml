@@ -7,3 +7,4 @@
     - { role: python }
     - { role: nodejs }
     - { role: awscli }
+    - { role: terraform }

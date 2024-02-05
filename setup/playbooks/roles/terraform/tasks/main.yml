@@ -1,0 +1,10 @@
+- name: install asdf plugin
+  shell:
+    cmd: |
+      asdf plugin add terraform https://github.com/asdf-community/asdf-hashicorp.git
+
+- name: install terraform
+  shell:
+    cmd: |
+      asdf install terraform {{ version }}
+

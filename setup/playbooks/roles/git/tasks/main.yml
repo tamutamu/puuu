@@ -6,4 +6,4 @@
 - name: install git
   shell:
     cmd: |
-      asdf install git
+      asdf install git 2.43.0

@@ -12,10 +12,10 @@ terraform {
   required_version = "~> 1.1"
 
   backend "s3" {
-    bucket         = "aichatfuu-production-terraform-backend"
-    key            = "aichatfuu"
+    bucket         = "puuu-production-terraform-backend"
+    key            = "puuu"
     encrypt        = true
-    dynamodb_table = "aichatfuu-production_terraform_tfstate_lock"
+    dynamodb_table = "puuu-production_terraform_tfstate_lock"
     region         = "ap-northeast-1"
   }
 }

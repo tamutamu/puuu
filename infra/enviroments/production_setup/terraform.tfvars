@@ -1,2 +1,2 @@
-app = "aichatfuu"
+app = "puuu"
 env = "production"
